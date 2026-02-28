@@ -1037,38 +1037,6 @@ h1 .cursor {
   cursor: not-allowed;
 }
 
-/* FINAL CTA */
-.final-cta {
-  padding: var(--space-7) var(--space-5) var(--space-9);
-  text-align: center;
-  position: relative;
-}
-.final-cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, rgba(192, 64, 30, 0.04) 0%, transparent 60%);
-}
-.final-cta h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.8rem, 5vw, 3.2rem);
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: var(--space-4);
-  position: relative;
-  letter-spacing: -0.02em;
-}
-.final-cta p {
-  font-size: 14px;
-  color: var(--text-dim);
-  margin-bottom: var(--space-6);
-  position: relative;
-  text-transform: none;
-  letter-spacing: 0;
-}
-.final-cta .btn-beast {
-  position: relative;
-}
 
 /* FOOTER */
 .footer {
