@@ -1,0 +1,695 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --fire: #c43a1a;
+  --lava: #bf5a1a;
+  --gold: #c49030;
+  --neon-green: #3abf2a;
+  --void: #050505;
+  --carbon: #0a0a0a;
+  --steel: #1a1a1a;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--void);
+  color: #f0f0f0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ANIMATED BACKGROUND GRID */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(230,54,0,0.025) 59px, rgba(230,54,0,0.025) 60px),
+    repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(230,54,0,0.025) 59px, rgba(230,54,0,0.025) 60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* WARNING BAR */
+.warning-bar {
+  padding: 10px 24px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--gold),
+    var(--gold) 10px,
+    #111 10px,
+    #111 20px
+  );
+  text-align: center;
+  overflow: hidden;
+}
+.warning-bar span {
+  display: inline-block;
+  padding: 4px 16px;
+  background: #111;
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  animation: marquee 20s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-200%); }
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 24px;
+  position: relative;
+  overflow: hidden;
+}
+/* hero glow removed */
+/* diagonal stripes removed */
+
+.version-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 20px;
+  border: 2px solid var(--fire);
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--fire);
+  margin-bottom: 32px;
+  position: relative;
+  background: rgba(255, 61, 0, 0.05);
+}
+.version-badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--neon-green);
+  box-shadow: 0 0 12px var(--neon-green), 0 0 24px var(--neon-green);
+  animation: blink 1.5s ease-in-out infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+h1 {
+  font-family: 'Black Ops One', sans-serif;
+  font-size: clamp(2.5rem, 9vw, 8rem);
+  line-height: 0.9;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+h1 .line1 {
+  display: block;
+  color: #eee;
+  text-shadow:
+    0 0 20px rgba(255,255,255,0.06),
+    2px 2px 0 var(--fire);
+  letter-spacing: 0.05em;
+  padding-left: 0.05em;
+}
+h1 .line2 {
+  display: block;
+  color: var(--fire);
+  text-shadow:
+    0 0 40px rgba(230,54,0,0.35),
+    0 0 80px rgba(230,54,0,0.15),
+    3px 3px 0 #000;
+  letter-spacing: 0.08em;
+  padding-left: 0.08em;
+}
+
+.tm {
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  color: #444;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.tagline {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #555;
+  max-width: 600px;
+  margin-bottom: 48px;
+  position: relative;
+  z-index: 1;
+}
+.tagline em {
+  color: var(--gold);
+  font-style: normal;
+}
+
+.cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.btn-beast {
+  display: inline-block;
+  padding: 18px 48px;
+  background: linear-gradient(180deg, var(--fire) 0%, #cc2200 100%);
+  color: #fff;
+  border: none;
+  font-family: 'Black Ops One', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow:
+    0 6px 30px rgba(230, 54, 0, 0.25),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn-beast:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 40px rgba(230, 54, 0, 0.4);
+}
+.btn-ghost {
+  display: inline-block;
+  padding: 18px 48px;
+  background: transparent;
+  color: var(--fire);
+  border: 2px solid var(--fire);
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  text-decoration: none;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+
+/* STATS BAR */
+.stats-bar {
+  padding: 0;
+  background: var(--carbon);
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+}
+.stat {
+  text-align: center;
+  padding: 32px 16px;
+  border-right: 1px solid #1a1a1a;
+  position: relative;
+  overflow: hidden;
+}
+.stat:last-child { border-right: none; }
+.stat::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--fire), transparent);
+  opacity: 0.5;
+}
+.stat-number {
+  font-family: 'Black Ops One', sans-serif;
+  font-size: clamp(28px, 5vw, 56px);
+  color: var(--fire);
+  line-height: 1;
+  text-shadow: 0 0 30px rgba(255, 61, 0, 0.3);
+}
+.stat-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* ENDORSEMENT TICKER */
+.ticker {
+  padding: 16px 0;
+  background: #0a0a0a;
+  border-bottom: 1px solid #1a1a1a;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-flex;
+  gap: 48px;
+  animation: ticker 30s linear infinite;
+}
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-item {
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #333;
+  flex-shrink: 0;
+}
+.ticker-item span { color: #555; }
+
+/* FEATURES */
+.features {
+  padding: 100px 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.section-header .eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: var(--fire);
+  margin-bottom: 16px;
+}
+.section-header h2 {
+  font-family: 'Black Ops One', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #fff;
+  text-shadow: 2px 2px 0 rgba(255,61,0,0.3);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2px;
+}
+.feature-card {
+  padding: 36px 28px;
+  background: var(--carbon);
+  border: 1px solid #1a1a1a;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.feature-card:hover {
+  border-color: var(--fire);
+}
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--fire), var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.feature-card:hover::before { opacity: 1; }
+
+.feature-number {
+  font-family: 'Black Ops One', sans-serif;
+  font-size: 48px;
+  color: #111;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  line-height: 1;
+}
+.feature-card:hover .feature-number { color: rgba(255,61,0,0.1); }
+
+.feature-emoji {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+.feature-card h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  color: #fff;
+}
+.feature-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+.feature-card .tag {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 4px 12px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--neon-green);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  background: rgba(57, 255, 20, 0.05);
+}
+
+/* TESTIMONIAL */
+.testimonial {
+  padding: 80px 24px;
+  text-align: center;
+  position: relative;
+}
+.testimonial::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--fire), transparent);
+}
+.testimonial blockquote {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 400;
+  color: #999;
+  max-width: 700px;
+  margin: 0 auto 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.testimonial blockquote em {
+  color: var(--fire);
+  font-style: normal;
+}
+.testimonial .attribution {
+  font-size: 13px;
+  color: #444;
+}
+.testimonial .stars {
+  font-size: 24px;
+  letter-spacing: 4px;
+  margin-bottom: 24px;
+  color: var(--gold);
+  text-shadow: 0 0 20px rgba(255, 170, 0, 0.3);
+}
+
+/* CHAT SECTION */
+.chat-section {
+  padding: 80px 24px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.chat-section .section-header {
+  margin-bottom: 32px;
+}
+.chat-window {
+  background: var(--carbon);
+  border: 1px solid #1a1a1a;
+  overflow: hidden;
+  position: relative;
+}
+.chat-window::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--fire), var(--gold), var(--fire));
+}
+.chat-header {
+  padding: 16px 20px;
+  background: #0d0d0d;
+  border-bottom: 1px solid #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chat-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.chat-avatar {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--fire), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+.chat-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+.chat-status {
+  font-size: 11px;
+  color: var(--neon-green);
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.chat-header-right {
+  display: flex;
+  gap: 4px;
+}
+.header-dot {
+  width: 8px;
+  height: 8px;
+  background: #333;
+}
+.header-dot.active { background: var(--fire); }
+
+.chat-messages {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 300px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+.msg {
+  max-width: 85%;
+  font-size: 14px;
+  line-height: 1.6;
+  position: relative;
+}
+.msg.user {
+  align-self: flex-end;
+  padding: 14px 18px;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  color: #bbb;
+}
+.msg.bot {
+  align-self: flex-start;
+}
+.msg.bot .bot-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.msg.bot .bot-icon {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, var(--fire), var(--lava));
+  clip-path: polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 5px 100%, 0 calc(100% - 5px));
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.msg.bot .bot-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--fire);
+}
+.msg.bot .bot-text {
+  padding: 14px 18px;
+  background: rgba(255, 61, 0, 0.06);
+  border-left: 3px solid var(--fire);
+  color: #ccc;
+}
+.msg.bot .reaction {
+  margin-top: 6px;
+  display: flex;
+  gap: 8px;
+}
+.msg.bot .reaction span {
+  font-size: 11px;
+  padding: 3px 10px;
+  border: 1px solid #222;
+  color: #555;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+}
+.msg.bot .reaction span:hover {
+  border-color: #444;
+  color: #888;
+}
+.msg.bot .reaction span.active {
+  border-color: var(--fire);
+  color: var(--fire);
+}
+
+/* TYPING INDICATOR */
+.typing-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  min-height: 24px;
+}
+.typing-dots span {
+  width: 6px;
+  height: 6px;
+  background: var(--fire);
+  border-radius: 50%;
+  animation: typing-bounce 1.4s ease-in-out infinite;
+}
+.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typing-bounce {
+  0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
+  40% { opacity: 1; transform: scale(1.2); }
+}
+
+.chat-input {
+  padding: 16px 20px;
+  border-top: 1px solid #1a1a1a;
+  background: #050505;
+  display: flex;
+  gap: 12px;
+}
+.chat-input input {
+  flex: 1;
+  padding: 14px 16px;
+  background: #0d0d0d;
+  border: 1px solid #222;
+  color: #f0f0f0;
+  font-size: 14px;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+}
+.chat-input input::placeholder { color: #333; }
+.chat-input input:focus { border-color: var(--fire); }
+.chat-input button {
+  padding: 14px 28px;
+  background: linear-gradient(180deg, var(--fire), #cc2200);
+  border: none;
+  color: #fff;
+  font-family: 'Black Ops One', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  transition: opacity 0.2s;
+}
+.chat-input button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* FINAL CTA */
+.final-cta {
+  padding: 100px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255,61,0,0.08) 0%, transparent 60%);
+}
+.final-cta h2 {
+  font-family: 'Black Ops One', sans-serif;
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: #fff;
+  margin-bottom: 16px;
+  position: relative;
+  text-shadow: 3px 3px 0 rgba(255,61,0,0.2);
+}
+.final-cta p {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #444;
+  margin-bottom: 40px;
+  position: relative;
+}
+.final-cta .btn-beast {
+  position: relative;
+  font-size: 20px;
+  padding: 20px 56px;
+}
+
+/* FOOTER */
+.footer {
+  padding: 40px 24px;
+  border-top: 1px solid #111;
+  text-align: center;
+}
+.footer p {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: #2a2a2a;
+}
+.footer .legal {
+  margin-top: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .stat { padding: 24px 12px; }
+  .stat:nth-child(2) { border-right: none; }
+
+  .chat-input { flex-direction: column; }
+  .chat-input button { width: 100%; }
+}
+
+/* Scrollbar styling for chat */
+.chat-messages::-webkit-scrollbar { width: 6px; }
+.chat-messages::-webkit-scrollbar-track { background: var(--carbon); }
+.chat-messages::-webkit-scrollbar-thumb { background: #333; }
+.chat-messages::-webkit-scrollbar-thumb:hover { background: var(--fire); }

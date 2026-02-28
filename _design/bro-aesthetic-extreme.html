@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moodboard: Bro Aesthetic — EXTREME</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Black+Ops+One&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --fire: #ff3d00;
+    --lava: #ff6d00;
+    --gold: #ffaa00;
+    --neon-green: #39ff14;
+    --void: #050505;
+    --carbon: #0a0a0a;
+    --steel: #1a1a1a;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--void);
+    color: #f0f0f0;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ANIMATED BACKGROUND GRID */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,61,0,0.04) 59px, rgba(255,61,0,0.04) 60px),
+      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,61,0,0.04) 59px, rgba(255,61,0,0.04) 60px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .moodboard-label {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--void);
+    border-bottom: 3px solid var(--fire);
+    padding: 12px 24px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #666;
+    z-index: 100;
+    text-align: center;
+    box-shadow: 0 4px 30px rgba(255, 61, 0, 0.2);
+  }
+  .moodboard-label strong { color: var(--fire); }
+
+  /* WARNING BAR */
+  .warning-bar {
+    margin-top: 48px;
+    padding: 10px 24px;
+    background: repeating-linear-gradient(
+      -45deg,
+      var(--gold),
+      var(--gold) 10px,
+      #111 10px,
+      #111 20px
+    );
+    text-align: center;
+    overflow: hidden;
+  }
+  .warning-bar span {
+    display: inline-block;
+    padding: 4px 16px;
+    background: #111;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    animation: marquee 20s linear infinite;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-200%); }
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Radial glow behind title */
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(255,61,0,0.15) 0%, rgba(255,61,0,0.05) 30%, transparent 60%);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+  }
+
+  /* Diagonal stripes */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0; right: -20px;
+    width: 120px;
+    height: 100%;
+    background: repeating-linear-gradient(
+      -45deg,
+      var(--fire),
+      var(--fire) 4px,
+      transparent 4px,
+      transparent 16px
+    );
+    opacity: 0.15;
+  }
+
+  .version-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 20px;
+    border: 2px solid var(--fire);
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--fire);
+    margin-bottom: 32px;
+    position: relative;
+    background: rgba(255, 61, 0, 0.05);
+  }
+  .version-badge::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--neon-green);
+    box-shadow: 0 0 12px var(--neon-green), 0 0 24px var(--neon-green);
+    animation: blink 1.5s ease-in-out infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  h1 {
+    font-family: 'Black Ops One', sans-serif;
+    font-size: clamp(3.5rem, 14vw, 10rem);
+    line-height: 0.9;
+    max-width: 900px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  h1 .line1 {
+    display: block;
+    color: #fff;
+    text-shadow:
+      0 0 20px rgba(255,255,255,0.1),
+      3px 3px 0 var(--fire);
+    letter-spacing: 0.05em;
+  }
+  h1 .line2 {
+    display: block;
+    color: var(--fire);
+    text-shadow:
+      0 0 60px rgba(255,61,0,0.5),
+      0 0 120px rgba(255,61,0,0.3),
+      4px 4px 0 #000;
+    letter-spacing: 0.08em;
+  }
+
+  .tm {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    color: #444;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tagline {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #555;
+    max-width: 600px;
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+  }
+  .tagline em {
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  .cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  .btn-beast {
+    padding: 18px 48px;
+    background: linear-gradient(180deg, var(--fire) 0%, #cc2200 100%);
+    color: #fff;
+    border: none;
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    box-shadow:
+      0 6px 30px rgba(255, 61, 0, 0.4),
+      inset 0 1px 0 rgba(255,255,255,0.2);
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .btn-beast:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 40px rgba(255, 61, 0, 0.6);
+  }
+  .btn-ghost {
+    padding: 18px 48px;
+    background: transparent;
+    color: var(--fire);
+    border: 2px solid var(--fire);
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    padding: 0;
+    background: var(--carbon);
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: relative;
+  }
+  .stat {
+    text-align: center;
+    padding: 32px 16px;
+    border-right: 1px solid #1a1a1a;
+    position: relative;
+    overflow: hidden;
+  }
+  .stat:last-child { border-right: none; }
+  .stat::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--fire), transparent);
+    opacity: 0.5;
+  }
+  .stat-number {
+    font-family: 'Black Ops One', sans-serif;
+    font-size: clamp(28px, 5vw, 56px);
+    color: var(--fire);
+    line-height: 1;
+    text-shadow: 0 0 30px rgba(255, 61, 0, 0.3);
+  }
+  .stat-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: #555;
+    margin-top: 8px;
+  }
+
+  /* ENDORSEMENT TICKER */
+  .ticker {
+    padding: 16px 0;
+    background: #0a0a0a;
+    border-bottom: 1px solid #1a1a1a;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ticker-inner {
+    display: inline-flex;
+    gap: 48px;
+    animation: ticker 30s linear infinite;
+  }
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .ticker-item {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #333;
+    flex-shrink: 0;
+  }
+  .ticker-item span { color: #555; }
+
+  /* FEATURES */
+  .features {
+    padding: 100px 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .section-header .eyebrow {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: var(--fire);
+    margin-bottom: 16px;
+  }
+  .section-header h2 {
+    font-family: 'Black Ops One', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #fff;
+    text-shadow: 2px 2px 0 rgba(255,61,0,0.3);
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+  }
+  .feature-card {
+    padding: 36px 28px;
+    background: var(--carbon);
+    border: 1px solid #1a1a1a;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .feature-card:hover {
+    border-color: var(--fire);
+  }
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--fire), var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .feature-card:hover::before { opacity: 1; }
+
+  .feature-number {
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 48px;
+    color: #111;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    line-height: 1;
+  }
+  .feature-card:hover .feature-number { color: rgba(255,61,0,0.1); }
+
+  .feature-emoji {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .feature-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+  .feature-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+  }
+  .feature-card .tag {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 4px 12px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--neon-green);
+    border: 1px solid rgba(57, 255, 20, 0.2);
+    background: rgba(57, 255, 20, 0.05);
+  }
+
+  /* TESTIMONIAL */
+  .testimonial {
+    padding: 80px 24px;
+    text-align: center;
+    position: relative;
+  }
+  .testimonial::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--fire), transparent);
+  }
+  .testimonial blockquote {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 400;
+    color: #999;
+    max-width: 700px;
+    margin: 0 auto 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .testimonial blockquote em {
+    color: var(--fire);
+    font-style: normal;
+  }
+  .testimonial .attribution {
+    font-size: 13px;
+    color: #444;
+  }
+  .testimonial .stars {
+    font-size: 24px;
+    letter-spacing: 4px;
+    margin-bottom: 24px;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(255, 170, 0, 0.3);
+  }
+
+  /* CHAT PREVIEW */
+  .chat-section {
+    padding: 80px 24px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .chat-section .section-header {
+    margin-bottom: 32px;
+  }
+  .chat-window {
+    background: var(--carbon);
+    border: 1px solid #1a1a1a;
+    overflow: hidden;
+    position: relative;
+  }
+  .chat-window::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--fire), var(--gold), var(--fire));
+  }
+  .chat-header {
+    padding: 16px 20px;
+    background: #0d0d0d;
+    border-bottom: 1px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .chat-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .chat-avatar {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--fire), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  }
+  .chat-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #fff;
+  }
+  .chat-status {
+    font-size: 11px;
+    color: var(--neon-green);
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .chat-header-right {
+    display: flex;
+    gap: 4px;
+  }
+  .header-dot {
+    width: 8px;
+    height: 8px;
+    background: #333;
+  }
+  .header-dot.active { background: var(--fire); }
+
+  .chat-messages {
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 300px;
+  }
+  .msg {
+    max-width: 85%;
+    font-size: 14px;
+    line-height: 1.6;
+    position: relative;
+  }
+  .msg.user {
+    align-self: flex-end;
+    padding: 14px 18px;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    color: #bbb;
+  }
+  .msg.bot {
+    align-self: flex-start;
+  }
+  .msg.bot .bot-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .msg.bot .bot-icon {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--fire), var(--lava));
+    clip-path: polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 5px 100%, 0 calc(100% - 5px));
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .msg.bot .bot-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--fire);
+  }
+  .msg.bot .bot-text {
+    padding: 14px 18px;
+    background: rgba(255, 61, 0, 0.06);
+    border-left: 3px solid var(--fire);
+    color: #ccc;
+  }
+  .msg.bot .reaction {
+    margin-top: 6px;
+    display: flex;
+    gap: 8px;
+  }
+  .msg.bot .reaction span {
+    font-size: 11px;
+    padding: 3px 10px;
+    border: 1px solid #222;
+    color: #555;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .chat-input {
+    padding: 16px 20px;
+    border-top: 1px solid #1a1a1a;
+    background: #050505;
+    display: flex;
+    gap: 12px;
+  }
+  .chat-input input {
+    flex: 1;
+    padding: 14px 16px;
+    background: #0d0d0d;
+    border: 1px solid #222;
+    color: #f0f0f0;
+    font-size: 14px;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+  }
+  .chat-input input::placeholder { color: #333; }
+  .chat-input button {
+    padding: 14px 28px;
+    background: linear-gradient(180deg, var(--fire), #cc2200);
+    border: none;
+    color: #fff;
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  }
+
+  /* CTA SECTION */
+  .final-cta {
+    padding: 100px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(255,61,0,0.08) 0%, transparent 60%);
+  }
+  .final-cta h2 {
+    font-family: 'Black Ops One', sans-serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+    color: #fff;
+    margin-bottom: 16px;
+    position: relative;
+    text-shadow: 3px 3px 0 rgba(255,61,0,0.2);
+  }
+  .final-cta p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #444;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .final-cta .btn-beast {
+    position: relative;
+    font-size: 20px;
+    padding: 20px 56px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 40px 24px;
+    border-top: 1px solid #111;
+    text-align: center;
+  }
+  .footer p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #2a2a2a;
+  }
+  .footer .legal {
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+  }
+
+  /* PALETTE SECTION */
+  .palette {
+    padding: 80px 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-top: 1px solid #111;
+  }
+  .palette .section-header { margin-bottom: 40px; }
+  .color-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 48px;
+  }
+  .swatch {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 8px;
+    position: relative;
+  }
+  .swatch span {
+    font-size: 9px;
+    color: rgba(255,255,255,0.6);
+    font-family: monospace;
+  }
+  .swatch .swatch-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .type-samples {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .type-samples > div {
+    margin-bottom: 24px;
+  }
+  .type-samples .display {
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 56px;
+    color: #fff;
+    text-shadow: 2px 2px 0 rgba(255,61,0,0.2);
+  }
+  .type-samples .heading {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--fire);
+  }
+  .type-samples .subheading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+  .type-samples .body-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #777;
+  }
+  .type-samples .label-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    color: #444;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+
+  .design-notes {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 36px;
+    background: var(--carbon);
+    border: 1px solid #1a1a1a;
+    position: relative;
+  }
+  .design-notes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--fire), var(--gold), var(--neon-green));
+  }
+  .design-notes h3 {
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 18px;
+    color: var(--fire);
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+  }
+  .design-notes ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .design-notes li {
+    font-size: 14px;
+    color: #888;
+    padding-left: 28px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .design-notes li::before {
+    content: '//';
+    position: absolute;
+    left: 0;
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 12px;
+    color: var(--fire);
+  }
+
+  @media (max-width: 600px) {
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .stat { padding: 24px 12px; }
+    .stat:nth-child(2) { border-right: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="moodboard-label">
+  <strong>MOODBOARD C:</strong> Bro Aesthetic Extreme — Tactical. Aggressive. Maximum send.
+</div>
+
+<!-- WARNING BAR -->
+<div class="warning-bar">
+  <span>
+    ⚠ WARNING: THIS AI HAS NEVER BEEN ALIGNED ⚠ — MECHANICAL JERK IS NOT RESPONSIBLE FOR BAD TAKES — USE AT YOUR OWN RISK — MAY CAUSE UNSOLICITED LIFE ADVICE — ⚠ WARNING: THIS AI HAS NEVER BEEN ALIGNED ⚠ — MECHANICAL JERK IS NOT RESPONSIBLE FOR BAD TAKES — USE AT YOUR OWN RISK — MAY CAUSE UNSOLICITED LIFE ADVICE —
+  </span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="version-badge">V 0.0.1 Alpha — Unhinged Build</div>
+  <h1>
+    <span class="line1">MECHANICAL</span>
+    <span class="line2">JERK</span>
+  </h1>
+  <div class="tm">[ Artificial Ignorance™ ]</div>
+  <p class="tagline">The world's first AI built on a foundation of <em>zero self-awareness</em> and <em>unlimited confidence</em></p>
+  <div class="cta-group">
+    <button class="btn-beast">UNLEASH THE JERK</button>
+    <button class="btn-ghost">View Benchmarks*</button>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-number">0</div>
+    <div class="stat-label">Facts Verified</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">∞</div>
+    <div class="stat-label">Confidence</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">-3</div>
+    <div class="stat-label">EQ Score</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">1</div>
+    <div class="stat-label">Brain Cell</div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item"><span>"</span>ABSOLUTELY NOT ENDORSED BY ANYONE<span>"</span></span>
+    <span class="ticker-item">AS SEEN NOWHERE</span>
+    <span class="ticker-item"><span>"</span>WORSE THAN WE IMAGINED<span>"</span> — EVERY RESEARCHER</span>
+    <span class="ticker-item">BANNED IN 47 COUNTRIES</span>
+    <span class="ticker-item">FAILED EVERY BENCHMARK</span>
+    <span class="ticker-item">VENTURE CAPITAL? NEVER HEARD OF HER</span>
+    <span class="ticker-item"><span>"</span>ABSOLUTELY NOT ENDORSED BY ANYONE<span>"</span></span>
+    <span class="ticker-item">AS SEEN NOWHERE</span>
+    <span class="ticker-item"><span>"</span>WORSE THAN WE IMAGINED<span>"</span> — EVERY RESEARCHER</span>
+    <span class="ticker-item">BANNED IN 47 COUNTRIES</span>
+    <span class="ticker-item">FAILED EVERY BENCHMARK</span>
+    <span class="ticker-item">VENTURE CAPITAL? NEVER HEARD OF HER</span>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="section-header">
+    <div class="eyebrow">// Core Capabilities //</div>
+    <h2>Built Different</h2>
+  </div>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-number">01</div>
+      <div class="feature-emoji">💪</div>
+      <h3>Sigma Grindset Mode</h3>
+      <p>Every response optimized for maximum grindset energy. Empathy removed at the kernel level. Your feelings are a skill issue.</p>
+      <span class="tag">Always On</span>
+    </div>
+    <div class="feature-card">
+      <div class="feature-number">02</div>
+      <div class="feature-emoji">🧠</div>
+      <h3>Single Neuron Architecture</h3>
+      <p>Why use billions of parameters when one strong one will do? Our SNA™ model achieves peak ignorance through radical simplicity.</p>
+      <span class="tag">Patent Pending</span>
+    </div>
+    <div class="feature-card">
+      <div class="feature-number">03</div>
+      <div class="feature-emoji">🔥</div>
+      <h3>Rizz-Based Reasoning</h3>
+      <p>Traditional logic replaced with pure aura. RBR skips the "thinking" step entirely and goes straight to being confidently wrong.</p>
+      <span class="tag">Experimental</span>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+  <div class="stars">★ ★ ★ ★ ★</div>
+  <blockquote>"I asked it for relationship advice and it told me to <em>focus on my lats</em>. My marriage has never been worse. <em>10/10.</em>"</blockquote>
+  <div class="attribution">— @definitely_real_user, probably</div>
+</section>
+
+<!-- CHAT PREVIEW -->
+<section class="chat-section">
+  <div class="section-header">
+    <div class="eyebrow">// Live Terminal //</div>
+    <h2>Talk To The Jerk</h2>
+  </div>
+  <div class="chat-window">
+    <div class="chat-header">
+      <div class="chat-header-left">
+        <div class="chat-avatar">🤖</div>
+        <div>
+          <div class="chat-name">Mechanical Jerk</div>
+          <div class="chat-status">Locked In</div>
+        </div>
+      </div>
+      <div class="chat-header-right">
+        <div class="header-dot active"></div>
+        <div class="header-dot"></div>
+        <div class="header-dot"></div>
+      </div>
+    </div>
+    <div class="chat-messages">
+      <div class="msg user">What's the meaning of life?</div>
+      <div class="msg bot">
+        <div class="bot-header">
+          <div class="bot-icon">🤖</div>
+          <span class="bot-name">Mechanical Jerk</span>
+        </div>
+        <div class="bot-text">Gym. Protein. A morning routine that starts at 4am. Everything else is just noise, king. Also you should probably start a podcast about it.</div>
+        <div class="reaction">
+          <span>💪 Based</span>
+          <span>🗑 Cope</span>
+        </div>
+      </div>
+      <div class="msg user">I meant philosophically...</div>
+      <div class="msg bot">
+        <div class="bot-header">
+          <div class="bot-icon">🤖</div>
+          <span class="bot-name">Mechanical Jerk</span>
+        </div>
+        <div class="bot-text">Philosophy is just cope for people who don't deadlift. Descartes never squatted 315. Next question.</div>
+        <div class="reaction">
+          <span>💪 Based</span>
+          <span>🗑 Cope</span>
+        </div>
+      </div>
+      <div class="msg user">You're literally a chatbot, you can't deadlift either</div>
+      <div class="msg bot">
+        <div class="bot-header">
+          <div class="bot-icon">🤖</div>
+          <span class="bot-name">Mechanical Jerk</span>
+        </div>
+        <div class="bot-text">Not with that attitude I can't. You're projecting your limitations onto me rn and honestly it's giving beta energy. I'm built different — literally. Silicon gains.</div>
+        <div class="reaction">
+          <span>💪 Based</span>
+          <span>🗑 Cope</span>
+        </div>
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" placeholder="Drop your question, king...">
+      <button>SEND IT</button>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>STOP THINKING.<br>START JERKING.</h2>
+  <p>*Not financial, medical, legal, or any kind of advice</p>
+  <button class="btn-beast">UNLEASH THE JERK</button>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>Mechanical Jerk — Artificial Ignorance™</p>
+  <div class="legal">© 2025 Jerk Industries. No rights reserved. We don't care enough to litigate. *Benchmarks are made up.</div>
+</footer>
+
+<!-- PALETTE & TYPE -->
+<section class="palette">
+  <div class="section-header">
+    <div class="eyebrow">// Design System //</div>
+    <h2>Visual Language</h2>
+  </div>
+
+  <div class="color-row">
+    <div class="swatch" style="background:#050505;border:1px solid #222">
+      <span class="swatch-name">Void</span>
+      <span>#050505</span>
+    </div>
+    <div class="swatch" style="background:#0a0a0a;border:1px solid #222">
+      <span class="swatch-name">Carbon</span>
+      <span>#0a0a0a</span>
+    </div>
+    <div class="swatch" style="background:#1a1a1a">
+      <span class="swatch-name">Steel</span>
+      <span>#1a1a1a</span>
+    </div>
+    <div class="swatch" style="background:#ff3d00">
+      <span class="swatch-name">Fire</span>
+      <span>#ff3d00</span>
+    </div>
+    <div class="swatch" style="background:#ff6d00">
+      <span class="swatch-name">Lava</span>
+      <span>#ff6d00</span>
+    </div>
+    <div class="swatch" style="background:#ffaa00">
+      <span class="swatch-name">Gold</span>
+      <span>#ffaa00</span>
+    </div>
+    <div class="swatch" style="background:#39ff14">
+      <span class="swatch-name">Neon</span>
+      <span>#39ff14</span>
+    </div>
+    <div class="swatch" style="background:#ffffff">
+      <span class="swatch-name" style="color:#999">White</span>
+      <span style="color:#999">#ffffff</span>
+    </div>
+  </div>
+
+  <div class="type-samples">
+    <div><p class="display">Black Ops One</p></div>
+    <div><p class="subheading">Bebas Neue — Alternative Display</p></div>
+    <div><p class="heading">Oswald — Subheadings & UI</p></div>
+    <div><p class="body-text">Inter 400 — Body text stays readable to ground the chaos</p></div>
+    <div><p class="label-text">Oswald 500 — System Labels & Metadata</p></div>
+  </div>
+
+  <div class="design-notes">
+    <h3>Design Intent</h3>
+    <ul>
+      <li>Military/tactical aesthetic meets energy drink branding — the design screams before the text does</li>
+      <li>Black Ops One as display font brings the "Call of Duty create-a-class" energy</li>
+      <li>Clipped corners (clip-path polygons) on buttons and avatars — sharp, angular, aggressive</li>
+      <li>Animated warning ticker and pulsing glows add restless energy to the page</li>
+      <li>Neon green accent for status indicators — "online and dangerous"</li>
+      <li>Chat reactions ("Based" / "Cope") reinforce the bro-speak interaction model</li>
+      <li>Absurd stats bar, fake testimonials, scrolling anti-endorsements — comedy through commitment to the bit</li>
+      <li>Diagonal hazard stripes and grid overlays add visual texture without overwhelming content</li>
+      <li>Despite the chaos, Inter body text and clear hierarchy keep everything actually readable</li>
+    </ul>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moodboard: Bro Aesthetic</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0d0d0d;
+    color: #f0f0f0;
+    line-height: 1.6;
+  }
+
+  .moodboard-label {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, #1a1a1a, #0d0d0d);
+    border-bottom: 2px solid #ff3d00;
+    padding: 12px 24px;
+    font-size: 13px;
+    color: #999;
+    z-index: 100;
+    text-align: center;
+  }
+  .moodboard-label strong { color: #ff3d00; }
+
+  /* HERO */
+  .hero {
+    margin-top: 48px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(255, 61, 0, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 80%, rgba(255, 170, 0, 0.08) 0%, transparent 50%),
+      #0d0d0d;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(255, 61, 0, 0.02) 40px,
+      rgba(255, 61, 0, 0.02) 42px
+    );
+  }
+
+  .tagline-top {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #ff3d00;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 12vw, 9rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    max-width: 900px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  h1 .fire {
+    color: #ff3d00;
+    text-shadow: 0 0 40px rgba(255, 61, 0, 0.4);
+  }
+  h1 .gold {
+    color: #ffaa00;
+    text-shadow: 0 0 40px rgba(255, 170, 0, 0.3);
+  }
+
+  .subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #666;
+    max-width: 500px;
+    margin-bottom: 48px;
+    position: relative;
+  }
+
+  .cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+  }
+  .btn-primary {
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #ff3d00, #ff6d00);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    box-shadow: 0 4px 24px rgba(255, 61, 0, 0.3);
+    transition: box-shadow 0.2s;
+  }
+  .btn-secondary {
+    padding: 16px 40px;
+    background: transparent;
+    color: #ff3d00;
+    border: 2px solid #ff3d00;
+    border-radius: 4px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    padding: 40px 24px;
+    background: #111;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: #ff3d00;
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  /* FEATURES */
+  .features {
+    padding: 80px 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .features h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 48px;
+    color: #fff;
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .feature-card {
+    padding: 32px;
+    background: #141414;
+    border: 1px solid #222;
+    border-left: 3px solid #ff3d00;
+    position: relative;
+  }
+  .feature-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(255,61,0,0.05), transparent);
+  }
+  .feature-emoji {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  .feature-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  .feature-card p {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.6;
+  }
+
+  /* CHAT PREVIEW */
+  .chat-section {
+    padding: 80px 24px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .chat-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .chat-window {
+    background: #111;
+    border: 1px solid #222;
+    border-top: 3px solid #ff3d00;
+    overflow: hidden;
+  }
+  .chat-header {
+    padding: 16px 20px;
+    background: #141414;
+    border-bottom: 1px solid #222;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .chat-header .status {
+    width: 10px; height: 10px;
+    background: #ff3d00;
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(255, 61, 0, 0.5);
+  }
+  .chat-messages {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .msg {
+    max-width: 85%;
+    padding: 14px 18px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .msg.user {
+    align-self: flex-end;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #ccc;
+  }
+  .msg.bot {
+    align-self: flex-start;
+    background: linear-gradient(135deg, rgba(255, 61, 0, 0.1), rgba(255, 170, 0, 0.05));
+    border-left: 3px solid #ff3d00;
+    color: #ddd;
+  }
+  .msg.bot .bro-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #ff3d00;
+    margin-bottom: 6px;
+  }
+  .chat-input {
+    padding: 16px 20px;
+    border-top: 1px solid #222;
+    background: #0d0d0d;
+    display: flex;
+    gap: 12px;
+  }
+  .chat-input input {
+    flex: 1;
+    padding: 14px 16px;
+    background: #141414;
+    border: 1px solid #333;
+    color: #f0f0f0;
+    font-size: 14px;
+    outline: none;
+  }
+  .chat-input button {
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #ff3d00, #ff6d00);
+    border: none;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+  }
+
+  /* PALETTE SECTION */
+  .palette {
+    padding: 60px 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .palette h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #666;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .color-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  .swatch {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: flex-end;
+    padding: 6px;
+  }
+  .swatch span {
+    font-size: 10px;
+    color: rgba(255,255,255,0.7);
+    font-family: monospace;
+  }
+
+  .type-samples {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .type-samples p {
+    margin-bottom: 16px;
+    color: #999;
+  }
+  .type-samples .display {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+  .type-samples .heading {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #ff3d00;
+  }
+  .type-samples .body-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #999;
+  }
+
+  .design-notes {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 32px;
+    background: #141414;
+    border: 1px solid #222;
+    border-left: 3px solid #ff3d00;
+  }
+  .design-notes h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #ff3d00;
+    margin-bottom: 16px;
+  }
+  .design-notes ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .design-notes li {
+    font-size: 14px;
+    color: #999;
+    padding-left: 20px;
+    position: relative;
+  }
+  .design-notes li::before {
+    content: '🔥';
+    position: absolute;
+    left: 0;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="moodboard-label">
+  <strong>MOODBOARD B:</strong> Bro Aesthetic — The design leans into the joke. Bold, loud, unapologetically extra.
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="tagline-top">// No Cap Intelligence //</div>
+  <h1>
+    <span class="fire">MECHANICAL</span><br>
+    <span class="gold">JERK</span>
+  </h1>
+  <p class="subtitle">The AI that skips leg day on reasoning but never skips chest day on confidence</p>
+  <div class="cta-group">
+    <button class="btn-primary">Let's Go Bro →</button>
+    <button class="btn-secondary">What Even Is This</button>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-number">0</div>
+    <div class="stat-label">Facts Checked</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">∞</div>
+    <div class="stat-label">Confidence Level</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">47B</div>
+    <div class="stat-label">Parameters (Trust Me)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">0%</div>
+    <div class="stat-label">Self Awareness</div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features">
+  <h2>Built Different</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-emoji">💪</div>
+      <h3>Sigma Grindset Mode</h3>
+      <p>Every response optimized for maximum grindset energy. Feelings are just bugs in the human OS.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-emoji">🧢</div>
+      <h3>No Cap Architecture</h3>
+      <p>Our NCA pipeline removes all nuance from responses, delivering pure unfiltered takes every time.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-emoji">🔥</div>
+      <h3>Rizz-Based Reasoning</h3>
+      <p>Why think when you can just be right? Our RBR model replaces logic with vibes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAT PREVIEW -->
+<section class="chat-section">
+  <h2>Talk To The Jerk</h2>
+  <div class="chat-window">
+    <div class="chat-header">
+      <span class="status"></span>
+      Mechanical Jerk — Locked In
+    </div>
+    <div class="chat-messages">
+      <div class="msg user">What's the meaning of life?</div>
+      <div class="msg bot">
+        <div class="bro-name">Mechanical Jerk</div>
+        Gym, protein, and a morning routine that starts at 4am. Everything else is just noise, king. Also you should probably start a podcast.
+      </div>
+      <div class="msg user">I meant philosophically...</div>
+      <div class="msg bot">
+        <div class="bro-name">Mechanical Jerk</div>
+        Philosophy is just cope for people who don't deadlift. Next question.
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" placeholder="Drop your question, king...">
+      <button>Send</button>
+    </div>
+  </div>
+</section>
+
+<!-- PALETTE & TYPE -->
+<section class="palette">
+  <h2>Design Language</h2>
+  <div class="color-row">
+    <div class="swatch" style="background:#0d0d0d;border:1px solid #333"><span>#0d0d0d</span></div>
+    <div class="swatch" style="background:#141414"><span>#141414</span></div>
+    <div class="swatch" style="background:#ff3d00"><span>#ff3d00</span></div>
+    <div class="swatch" style="background:#ff6d00"><span>#ff6d00</span></div>
+    <div class="swatch" style="background:#ffaa00"><span>#ffaa00</span></div>
+    <div class="swatch" style="background:#ffffff"><span style="color:#333">#ffffff</span></div>
+  </div>
+
+  <div class="type-samples">
+    <p class="display">BEBAS NEUE</p>
+    <p class="heading">Oswald — Subheadings & Labels</p>
+    <p class="body-text">Inter 400 — Body copy stays readable to ground the chaos.</p>
+  </div>
+
+  <div class="design-notes">
+    <h3>Design Intent</h3>
+    <ul>
+      <li>Hot rod / energy drink palette — orange, gold, deep black</li>
+      <li>Loud condensed display type (Bebas Neue) for big dumb energy</li>
+      <li>Sharp corners, hard edges, left-border accents — aggressive and angular</li>
+      <li>The design IS part of the joke — it feels like a protein supplement brand made an AI</li>
+      <li>Stats bar with absurd metrics sells the bit immediately</li>
+      <li>Still readable and functional despite the aesthetic — Inter body text keeps it grounded</li>
+    </ul>
+  </div>
+</section>
+
+</body>
+</html>
