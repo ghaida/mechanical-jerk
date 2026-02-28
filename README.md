@@ -23,14 +23,16 @@ Open http://localhost:3000
 
 ## Deploy
 
-Deploys on Railway (or any Node.js host). Set `ANTHROPIC_API_KEY` as an environment variable — Railway sets `PORT` automatically.
+Live at **[www.mechanicaljerk.ai](https://www.mechanicaljerk.ai)**
+
+Deployed on Railway. Set `ANTHROPIC_API_KEY` as an environment variable — Railway sets `PORT` automatically. To redeploy: `railway up --detach`
 
 ## Stack
 
 - Vanilla HTML/CSS/JS frontend
 - Express backend
 - Claude API (Haiku 4.5) with a bro persona system prompt
-- No frameworks, no build step
+- No frameworks, no build step, no cap
 
 ## Disclaimer
 

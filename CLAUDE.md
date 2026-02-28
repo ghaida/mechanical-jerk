@@ -42,3 +42,12 @@ Mechanical Jerk — a joke/satire website for a fake LLM called "Mechanical Jerk
 - `npm run dev` — start dev server with file watching (node --watch)
 - `npm start` — start production server
 - Server runs on PORT env var or 3000 by default
+- `railway up --detach` — deploy to Railway
+
+## Deployment
+
+- Hosted on Railway: https://mechanical-jerk-production.up.railway.app
+- Custom domain: www.mechanicaljerk.ai (CNAME → Railway)
+- mechanicaljerk.ai (root) redirects to www via Name.com URL forwarding
+- `ANTHROPIC_API_KEY` set as Railway env var
+- Railway auto-detects Node.js from package.json, runs `npm start`
