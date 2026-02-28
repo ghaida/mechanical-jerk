@@ -10,14 +10,14 @@
   <rect width="1200" height="630" fill="url(#glow)"/>
 
   <!-- Logo -->
-  <g transform="translate(510, 100) scale(0.9)">
+  <g transform="translate(510, 90) scale(0.9)">
     <path d="M 100 88 C 68 48, 12 52, 14 100 C 16 148, 70 152, 100 112 C 122 148, 168 144, 170 108 C 172 72, 128 60, 100 88 Z" fill="none" stroke="#c0401e" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
     <circle cx="55" cy="100" r="14" fill="none" stroke="#c0401e" stroke-width="7" opacity="0.35"/>
   </g>
 
-  <!-- ChadGPT -->
-  <text x="600" y="380" text-anchor="middle" font-family="Space Grotesk" font-size="140" font-weight="700" letter-spacing="-3" fill="#eeeeee" text-rendering="geometricPrecision">Chad<tspan fill="#c0401e">GPT</tspan></text>
+  <!-- CHADGPT — all caps, Space Grotesk 700, letter-spacing -0.03em -->
+  <text x="600" y="380" text-anchor="middle" font-family="Space Grotesk" font-size="140" font-weight="700" letter-spacing="-4" fill="#eeeeee" text-rendering="geometricPrecision">CHAD<tspan fill="#c0401e">GPT</tspan></text>
 
-  <!-- by Mechanical Jerk -->
-  <text x="600" y="440" text-anchor="middle" font-family="Oswald" font-size="28" font-weight="500" letter-spacing="8" fill="#7e7e8a" text-rendering="geometricPrecision">BY MECHANICAL JERK</text>
+  <!-- by Mechanical Jerk — Oswald, uppercase, spaced -->
+  <text x="600" y="435" text-anchor="middle" font-family="Oswald" font-size="28" font-weight="400" letter-spacing="5" fill="#7e7e8a" text-rendering="geometricPrecision">BY <tspan font-weight="500" fill="#aaaaaa">MECHANICAL JERK</tspan></text>
 </svg>
