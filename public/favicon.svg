@@ -1,4 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
   <rect width="128" height="128" rx="16" fill="#08080a"/>
-  <text x="64" y="92" font-family="Arial Black, sans-serif" font-size="80" font-weight="900" fill="#c0401e" text-anchor="middle">J</text>
+  <g transform="translate(14, 14) scale(0.5)">
+    <path d="
+      M 100 88
+      C 68 48, 12 52, 14 100
+      C 16 148, 70 152, 100 112
+      C 122 148, 168 144, 170 108
+      C 172 72, 128 60, 100 88
+      Z
+    " fill="none" stroke="#c0401e" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="55" cy="100" r="14" fill="none" stroke="#c0401e" stroke-width="7" opacity="0.35"/>
+  </g>
 </svg>

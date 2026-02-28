@@ -32,25 +32,54 @@
 </head>
 <body>
 
-<!-- WARNING BAR -->
-<div class="warning-bar" role="marquee">
-  <span>
-    &#9888; WARNING: THIS AI HAS NEVER BEEN ALIGNED &#9888; — MECHANICAL JERK IS NOT RESPONSIBLE FOR BAD TAKES — USE AT YOUR OWN RISK — MAY CAUSE UNSOLICITED LIFE ADVICE —
-  </span>
-</div>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-left">
+    <a href="#" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 100 88 C 68 48, 12 52, 14 100 C 16 148, 70 152, 100 112 C 122 148, 168 144, 170 108 C 172 72, 128 60, 100 88 Z" fill="none" stroke="#c0401e" stroke-width="12" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="55" cy="100" r="14" fill="none" stroke="#c0401e" stroke-width="8" opacity="0.35"/>
+      </svg>
+      <span>Mechanical Jerk</span>
+    </a>
+  </div>
+  <div class="nav-right">
+    <a href="#stats" class="nav-link">Benchmarks*</a>
+    <a href="#features" class="nav-link">Capabilities</a>
+    <a href="#testimonials" class="nav-link">Testimonials</a>
+    <a href="#pricing" class="nav-link">Pricing</a>
+    <a href="#chat" class="btn-beast btn-xs nav-cta">Let Him Cook</a>
+  </div>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-embers">
+    <div class="ember"></div>
+    <div class="ember"></div>
+    <div class="ember"></div>
+    <div class="ember"></div>
+    <div class="ember"></div>
+    <div class="ember"></div>
+    <div class="ember"></div>
+    <div class="ember"></div>
+    <div class="ember"></div>
+    <div class="ember"></div>
+    <div class="ember"></div>
+    <div class="ember"></div>
+    <div class="ember"></div>
+    <div class="ember"></div>
+    <div class="ember"></div>
+  </div>
   <div class="version-badge">V 0.0.1 Alpha — Unhinged Build</div>
   <h1>
-    <span class="line1">MECHANICAL</span>
-    <span class="line2">JERK</span>
+    <span class="line1"></span><span class="line2"></span>
   </h1>
   <div class="tm">[ Artificial Ignorance&trade; — No Thoughts, Just Vibes ]</div>
   <p class="tagline">The world's first AI that skipped alignment day. <em>Zero self-awareness.</em> <em>Unlimited confidence.</em> Your feelings are not in the training data.</p>
   <div class="cta-group">
-    <a href="#chat" class="btn-beast">UNLEASH THE JERK</a>
-    <a href="#stats" class="btn-ghost">View Benchmarks*</a>
+    <a href="#chat" class="btn-beast btn-md">LET HIM COOK</a>
+    <a href="#stats" class="btn-ghost btn-md">View Benchmarks*</a>
   </div>
 </section>
 
@@ -93,7 +122,7 @@
 </div>
 
 <!-- FEATURES -->
-<section class="features">
+<section class="features" id="features">
   <div class="section-header">
     <div class="eyebrow">// Core Capabilities //</div>
     <h2>Built Different</h2>
@@ -124,7 +153,7 @@
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="testimonials">
+<section class="testimonials" id="testimonials">
   <div class="section-header">
     <div class="eyebrow">// Social Proof (Unverified) //</div>
     <h2>What People Regret Saying</h2>
@@ -149,7 +178,7 @@
 </section>
 
 <!-- PRICING -->
-<section class="pricing">
+<section class="pricing" id="pricing">
   <div class="section-header">
     <div class="eyebrow">// Maximum Send Pricing //</div>
     <h2>Invest In Your Downfall</h2>
@@ -165,7 +194,7 @@
         <li>Standard delusion speed</li>
         <li>Community cope forum</li>
       </ul>
-      <a href="#chat" class="btn-ghost pricing-btn">Start Coping</a>
+      <a href="#chat" class="btn-ghost btn-sm pricing-btn">Start Coping</a>
     </div>
     <div class="pricing-card">
       <div class="pricing-tier">Alpha</div>
@@ -178,7 +207,7 @@
         <li>2x delusion speed</li>
         <li>Email &ldquo;support&rdquo; (unread)</li>
       </ul>
-      <a href="#chat" class="btn-ghost pricing-btn">Level Up</a>
+      <a href="#chat" class="btn-ghost btn-sm pricing-btn">Level Up</a>
     </div>
     <div class="pricing-card featured">
       <div class="pricing-badge">Most Unhinged</div>
@@ -192,7 +221,7 @@
         <li>Priority gaslighting queue</li>
         <li>&ldquo;I talked to The Jerk&rdquo; badge</li>
       </ul>
-      <a href="#chat" class="btn-beast pricing-btn">Lock In</a>
+      <a href="#chat" class="btn-beast btn-sm pricing-btn">Lock In</a>
     </div>
     <div class="pricing-card">
       <div class="pricing-tier">Gigachad</div>
@@ -205,7 +234,7 @@
         <li>Your name on our wall of shame</li>
         <li>Legally questionable NFT</li>
       </ul>
-      <a href="#chat" class="btn-ghost pricing-btn">Ascend</a>
+      <a href="#chat" class="btn-ghost btn-sm pricing-btn">Ascend</a>
     </div>
   </div>
   <p class="pricing-disclaimer">*All plans are fake. This is a joke. Do not send us money. We will not give it back.</p>
@@ -246,7 +275,7 @@
 <section class="final-cta">
   <h2>STOP THINKING.<br>START JERKING.</h2>
   <p>*Not financial, medical, legal, or any kind of advice</p>
-  <a href="#chat" class="btn-beast">UNLEASH THE JERK</a>
+  <a href="#chat" class="btn-beast btn-lg">LET HIM COOK</a>
 </section>
 
 <!-- FOOTER -->
@@ -256,5 +285,42 @@
 </footer>
 
 <script src="chat.js"></script>
+<script>
+(function() {
+  var line1 = document.querySelector('h1 .line1');
+  var line2 = document.querySelector('h1 .line2');
+  var text1 = 'MECHANICAL';
+  var text2 = 'JERK';
+  var cursor = document.createElement('span');
+  cursor.className = 'cursor';
+
+  var i = 0;
+  line1.appendChild(cursor);
+
+  function typeLine1() {
+    if (i < text1.length) {
+      line1.insertBefore(document.createTextNode(text1[i]), cursor);
+      i++;
+      setTimeout(typeLine1, 80 + Math.random() * 60);
+    } else {
+      line1.removeChild(cursor);
+      line1.appendChild(document.createTextNode(' '));
+      i = 0;
+      line2.appendChild(cursor);
+      setTimeout(typeLine2, 200);
+    }
+  }
+
+  function typeLine2() {
+    if (i < text2.length) {
+      line2.insertBefore(document.createTextNode(text2[i]), cursor);
+      i++;
+      setTimeout(typeLine2, 100 + Math.random() * 80);
+    }
+  }
+
+  setTimeout(typeLine1, 400);
+})();
+</script>
 </body>
 </html>

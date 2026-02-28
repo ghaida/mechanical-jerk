@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo Options — Mechanical Jerk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #08080a;
+    color: #ddd;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    min-height: 100vh;
+    padding: 80px 40px;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  .header h1 {
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #c0401e;
+    margin-bottom: 12px;
+  }
+  .header p {
+    font-size: 14px;
+    color: #444;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 24px;
+    border: 1px solid #1a1a1f;
+    border-radius: 16px;
+    background: #0c0c0f;
+    transition: border-color 0.3s;
+  }
+  .option:hover { border-color: #c0401e33; }
+  .logo-wrap {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+  .option h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #c0401e;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .option p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    text-align: center;
+  }
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 500px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Mechanical Jerk — Logo Exploration</h1>
+  <p>Parody AI logos. Bold strokes only. Plausible deniability required.</p>
+</div>
+
+<div class="grid">
+
+  <!-- A: The Clench — three thick rings in a tight triangular cluster -->
+  <div class="option">
+    <div class="logo-wrap">
+      <svg width="150" height="150" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Three overlapping thick circles in a tight cluster -->
+        <!-- Top circle -->
+        <circle cx="100" cy="68" r="40" fill="none" stroke="#c0401e" stroke-width="8"/>
+        <!-- Bottom-left circle -->
+        <circle cx="72" cy="132" r="40" fill="none" stroke="#c0401e" stroke-width="8"/>
+        <!-- Bottom-right circle -->
+        <circle cx="128" cy="132" r="40" fill="none" stroke="#c0401e" stroke-width="8"/>
+        <!-- Center fill to clean up the overlap junction -->
+        <circle cx="100" cy="112" r="10" fill="#c0401e" opacity="0.25"/>
+      </svg>
+    </div>
+    <h3>The Clench</h3>
+    <p>Three thick rings in a tight cluster. Borromean rings energy — linked, inseparable, uncomfortably close. Like a Venn diagram that got too personal.</p>
+  </div>
+
+  <!-- B: The View — two filled forms with variable thickness -->
+  <div class="option">
+    <div class="logo-wrap">
+      <svg width="150" height="150" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Left cheek — filled crescent, thick outside tapering inward -->
+        <path d="
+          M 88 45
+          C 50 42, 14 65, 14 105
+          C 14 145, 50 172, 88 162
+          C 72 148, 62 128, 62 105
+          C 62 78, 74 58, 88 45
+          Z
+        " fill="#c0401e"/>
+        <!-- Right cheek — mirror -->
+        <path d="
+          M 112 45
+          C 150 42, 186 65, 186 105
+          C 186 145, 150 172, 112 162
+          C 128 148, 138 128, 138 105
+          C 138 78, 126 58, 112 45
+          Z
+        " fill="#c0401e"/>
+        <!-- The void -->
+        <circle cx="100" cy="80" r="12" fill="#0c0c0f"/>
+      </svg>
+    </div>
+    <h3>The View</h3>
+    <p>Two filled forms — thicc on the outside, tapering where they meet. A single void nestled between. Dual-core neural architecture. Nothing else. Don't zoom in.</p>
+  </div>
+
+  <!-- C: The Flex — bold infinity with asymmetric loops -->
+  <div class="option">
+    <div class="logo-wrap">
+      <svg width="150" height="150" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Bold infinity / figure-8 with one loop bigger -->
+        <path d="
+          M 100 88
+          C 68 48, 12 52, 14 100
+          C 16 148, 70 152, 100 112
+          C 122 148, 168 144, 170 108
+          C 172 72, 128 60, 100 88
+          Z
+        " fill="none" stroke="#c0401e" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+        <!-- Inner void accent in big loop -->
+        <circle cx="55" cy="100" r="14" fill="none" stroke="#c0401e" stroke-width="6" opacity="0.3"/>
+      </svg>
+    </div>
+    <h3>The Flex</h3>
+    <p>A thick infinity where one loop is swole and one is lean. The inner void ring says "I'm a serious AI company." The asymmetry says "I skip leg day."</p>
+  </div>
+
+  <!-- D: The Stack — three thick horizontal ovals stacked vertically, slightly offset -->
+  <div class="option">
+    <div class="logo-wrap">
+      <svg width="150" height="150" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Three stacked thick ovals, each slightly offset -->
+        <ellipse cx="96"  cy="58"  rx="50" ry="28" fill="none" stroke="#c0401e" stroke-width="8"/>
+        <ellipse cx="104" cy="100" rx="50" ry="28" fill="none" stroke="#c0401e" stroke-width="8"/>
+        <ellipse cx="96"  cy="142" rx="50" ry="28" fill="none" stroke="#c0401e" stroke-width="8"/>
+      </svg>
+    </div>
+    <h3>The Stack</h3>
+    <p>Three thick ovals stacked and offset. Three holes. Looks like a data-processing logo from a legit Series B startup. Also looks like something else entirely. You decide.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
