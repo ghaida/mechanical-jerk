@@ -715,7 +715,7 @@ h1 .cursor {
 
 /* ENTERPRISE */
 .enterprise {
-  padding: var(--space-9) var(--space-5);
+  padding: var(--space-8) var(--space-5);
   border-top: 1px solid var(--border);
   background:
     radial-gradient(ellipse at 30% 20%, rgba(184, 146, 46, 0.06) 0%, transparent 50%),
@@ -749,14 +749,14 @@ h1 .cursor {
   font-size: clamp(0.9rem, 2vw, 1.05rem);
   color: var(--text-dim);
   line-height: 1.6;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
   max-width: 560px;
 }
 .enterprise-features {
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 .enterprise-feature {
   display: flex;
@@ -824,7 +824,7 @@ h1 .cursor {
   color: var(--text-dim);
   font-style: italic;
   line-height: 1.5;
-  margin-bottom: var(--space-8);
+  margin-bottom: 0;
 }
 .enterprise-logos {
   padding-top: var(--space-6);
@@ -1243,6 +1243,9 @@ h1 .cursor {
   .stat:nth-child(2) { border-right: 1px solid var(--border); }
   .pricing-grid { grid-template-columns: repeat(4, 1fr); }
   .pricing-card.featured { margin-top: 0; }
+  .enterprise { padding: var(--space-9) var(--space-5); }
+  .enterprise-sub { margin-bottom: var(--space-8); }
+  .enterprise-features { margin-bottom: var(--space-8); }
   .enterprise-cta-group { flex-direction: row; align-items: center; }
   .enterprise-logo-grid { grid-template-columns: repeat(4, 1fr); }
   .chat-input { flex-direction: row; }
