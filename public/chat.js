@@ -58,7 +58,7 @@ function appendMessage(role, text) {
     msg.innerHTML = `
       <div class="bot-header">
         <div class="bot-icon">\u{1F916}</div>
-        <span class="bot-name">Mechanical Jerk</span>
+        <span class="bot-name">ChadGPT</span>
       </div>
       <div class="bot-text">${escapeHTML(text)}</div>
       <div class="reaction">
@@ -79,7 +79,7 @@ function showTypingIndicator() {
   typing.innerHTML = `
     <div class="bot-header">
       <div class="bot-icon">\u{1F916}</div>
-      <span class="bot-name">Mechanical Jerk</span>
+      <span class="bot-name">ChadGPT</span>
     </div>
     <div class="bot-text typing-dots">
       <span></span><span></span><span></span>
