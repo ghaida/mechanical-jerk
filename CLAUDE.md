@@ -30,11 +30,13 @@ Sleek startup polish with bro energy underneath. Evolved from Moodboard C (Bro A
 - `server.js` — Express app, serves `public/` static files + `POST /api/chat` endpoint
 - `public/style.css` — the one true stylesheet (graduated from hybrid experiments)
 - `public/chat.js` — chat UI logic, conversation history, typing indicator, reaction buttons
-- `public/index.html` — landing page: hero, stats, ticker, features, testimonials (3 cards), pricing (4 tiers), live chat, final CTA, footer
+- `public/index.html` — landing page: hero (CHADGPT typewriter), stats, ticker, features, testimonials (3 cards), pricing (4 tiers), live chat, final CTA, footer
 - `public/chadgpt.html` — dedicated chat page at `/chadgpt` with nav, chatbot, full-width upgrade callout, footer
+- Nav has hamburger menu on mobile (JS toggle in inline scripts on both pages), links shown inline on desktop
 - Backend proxies chat to Claude API with bro persona system prompt, in-memory rate limiting (20 req/min per IP)
 - Frontend is vanilla HTML/CSS/JS — no framework
-- CSS uses an 8px spacing system (`--space-1` through `--space-11`) and radius tokens
+- CSS is mobile-first with `@media (min-width: 601px)` for desktop overrides
+- 8px spacing system (`--space-1` through `--space-11`) and radius tokens
 - Non-streaming responses (v1 simplicity)
 - Old moodboard stylesheets preserved in `_design/` for reference
 

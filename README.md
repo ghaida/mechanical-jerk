@@ -36,4 +36,4 @@ Deployed on Railway. Set `ANTHROPIC_API_KEY` as an environment variable — Rail
 
 ## Disclaimer
 
-*This is a joke. The Mechanical Jerk is a fictional character. All pricing tiers are fake. All testimonials are fabricated. All benchmarks are made up. Do not take life advice from this chatbot.*
+*This is a joke. ChadGPT is a fictional character. All pricing tiers are fake. All testimonials are fabricated. All benchmarks are made up. Do not take life advice from this chatbot.*

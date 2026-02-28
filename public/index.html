@@ -41,15 +41,18 @@
         <path d="M 100 88 C 68 48, 12 52, 14 100 C 16 148, 70 152, 100 112 C 122 148, 168 144, 170 108 C 172 72, 128 60, 100 88 Z" fill="none" stroke="#c0401e" stroke-width="12" stroke-linejoin="round" stroke-linecap="round"/>
         <circle cx="55" cy="100" r="14" fill="none" stroke="#c0401e" stroke-width="8" opacity="0.35"/>
       </svg>
-      <span>Mechanical Jerk</span>
+      <div class="nav-text"><span class="nav-brand">ChadGPT</span><span class="nav-by">by Mechanical Jerk</span></div>
     </a>
   </div>
   <div class="nav-right">
+    <a href="/chadgpt" class="btn-beast btn-xs nav-cta">Let Him Cook</a>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-menu">
     <a href="#stats" class="nav-link">Benchmarks*</a>
     <a href="#features" class="nav-link">Capabilities</a>
     <a href="#testimonials" class="nav-link">Testimonials</a>
     <a href="#pricing" class="nav-link">Pricing</a>
-    <a href="/chadgpt" class="btn-beast btn-xs nav-cta">Let Him Cook</a>
   </div>
 </nav>
 
@@ -76,7 +79,8 @@
   <h1>
     <span class="line1"></span><span class="line2"></span>
   </h1>
-  <div class="tm">[ Artificial Drip&trade; — No Thoughts, Just Vibes ]</div>
+  <div class="hero-byline">powered by <span>Mechanical Jerk</span></div>
+  <div class="tm">[ Artificial Drip&trade; &mdash; No Thoughts, Just Vibes ]</div>
   <p class="tagline">Powered by our proprietary Single Neuron Architecture&trade; for lightning-fast, unwavering responses. While other models waste cycles on <em>&ldquo;nuance,&rdquo;</em> ChadGPT just sends it.</p>
   <div class="cta-group">
     <a href="/chadgpt" class="btn-beast btn-md">LET HIM COOK</a>
@@ -263,6 +267,7 @@
         <li>Quad neuron mode</li>
         <li>Priority gaslightmaxxing</li>
         <li>ChadGPT follows you on LinkedIn</li>
+        <li>AI-generated excuses for skipping leg day</li>
         <li>50g protein per response</li>
       </ul>
       <a href="#chat" class="btn-beast btn-sm pricing-btn">Lock In</a>
@@ -274,9 +279,10 @@
       <ul class="pricing-features">
         <li>Everything in Sigma</li>
         <li>ChadGPT prompts YOU</li>
-        <li>Personal bad advice hotline</li>
+        <li>Personal bad advice thotline</li>
         <li>ChadGPT texts your ex for you</li>
         <li>Legally questionable NFT</li>
+        <li>ChadGPT writes your Hinge bio</li>
         <li>200g protein per response</li>
       </ul>
       <a href="#chat" class="btn-ghost btn-sm pricing-btn">Ascend</a>
@@ -294,17 +300,29 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-  <p>Mechanical Jerk — Artificial Drip&trade;</p>
+  <p><span class="footer-brand">ChadGPT</span> by Mechanical Jerk &mdash; Artificial Drip&trade;</p>
   <div class="legal">&copy; 2067 Mechanical Jerk, LLC. No rights reserved. We don't care enough to litigate. *Benchmarks are made up.</div>
 </footer>
 
 <script src="chat.js"></script>
 <script>
+document.querySelector('.nav-hamburger').addEventListener('click', function() {
+  this.classList.toggle('open');
+  document.querySelector('.nav-menu').classList.toggle('open');
+});
+document.querySelectorAll('.nav-menu .nav-link').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.querySelector('.nav-hamburger').classList.remove('open');
+    document.querySelector('.nav-menu').classList.remove('open');
+  });
+});
+</script>
+<script>
 (function() {
   var line1 = document.querySelector('h1 .line1');
   var line2 = document.querySelector('h1 .line2');
-  var text1 = 'MECHANICAL';
-  var text2 = 'JERK';
+  var text1 = 'CHAD';
+  var text2 = 'GPT';
   var cursor = document.createElement('span');
   cursor.className = 'cursor';
 
@@ -318,7 +336,6 @@
       setTimeout(typeLine1, 80 + Math.random() * 60);
     } else {
       line1.removeChild(cursor);
-      line1.appendChild(document.createTextNode(' '));
       i = 0;
       line2.appendChild(cursor);
       setTimeout(typeLine2, 200);
