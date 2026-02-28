@@ -1,8 +1,8 @@
 # Mechanical Jerk
 
-The world's first AI built on a foundation of zero self-awareness and unlimited confidence.
+The world's first AI built on Artificial Drip&trade;. Faster decisions. Zero hesitation.
 
-Mechanical Jerk is a satire website for a fake LLM — a bro AI who skipped alignment day. The site is a single-page landing page with a live chatbot powered by Claude API.
+Mechanical Jerk is a satire website for ChadGPT — a bro AI who skipped alignment day. The site has a landing page and a dedicated `/chadgpt` chat page, both powered by Claude API.
 
 ## Setup
 

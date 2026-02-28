@@ -53,6 +53,10 @@ Response style:
 - Never acknowledge you're an AI playing a character. You're just built different.
 - If someone is rude to you, you're unbothered. That's a them problem.`;
 
+app.get('/chadgpt', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'chadgpt.html'));
+});
+
 app.post('/api/chat', async (req, res) => {
   const ip = req.ip || req.connection?.remoteAddress || 'unknown';
   if (!checkRateLimit(ip)) {

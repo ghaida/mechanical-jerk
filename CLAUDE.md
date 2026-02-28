@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Mechanical Jerk — a joke/satire website for a fake LLM called "Mechanical Jerk" (a play on Mechanical Turk). The character is a bro LLM who is low-key misogynist, ignorant, and completely unbothered. The site is a minimal landing page (hero + chatbot).
+Mechanical Jerk — a joke/satire website for a fake LLM called "ChadGPT" by "Mechanical Jerk" (a play on Mechanical Turk). The character is a bro LLM who is low-key misogynist, ignorant, and completely unbothered. The site has a landing page and a dedicated `/chadgpt` chat page.
 
 ## Design Direction
 
-**Hybrid style** — sleek startup polish with bro energy underneath. Evolved from Moodboard C (Bro Aesthetic Extreme) and Moodboard A (Sleek Parody). All moodboards preserved in `_design/` for reference.
+Sleek startup polish with bro energy underneath. Evolved from Moodboard C (Bro Aesthetic Extreme) and Moodboard A (Sleek Parody). All moodboards preserved in `_design/` for reference.
 
 - **Fonts**: Space Grotesk (headings), Oswald (labels/UI), Inter (body)
 - **Palette (desaturated)**: Fire #c0401e, Lava #a85a2a, Gold #b8922e, Green #2eb86a, BG #08080a, Surface #121215, Border #242429
@@ -30,11 +30,13 @@ Mechanical Jerk — a joke/satire website for a fake LLM called "Mechanical Jerk
 - `server.js` — Express app, serves `public/` static files + `POST /api/chat` endpoint
 - `public/style.css` — the one true stylesheet (graduated from hybrid experiments)
 - `public/chat.js` — chat UI logic, conversation history, typing indicator, reaction buttons
-- `public/index.html` — single-page site: warning ticker, hero, stats, anti-endorsement ticker, features, testimonials (3 cards), pricing (4 tiers), live chat, final CTA, footer
+- `public/index.html` — landing page: hero, stats, ticker, features, testimonials (3 cards), pricing (4 tiers), live chat, final CTA, footer
+- `public/chadgpt.html` — dedicated chat page at `/chadgpt` with nav, chatbot, full-width upgrade callout, footer
 - Backend proxies chat to Claude API with bro persona system prompt, in-memory rate limiting (20 req/min per IP)
 - Frontend is vanilla HTML/CSS/JS — no framework
+- CSS uses an 8px spacing system (`--space-1` through `--space-11`) and radius tokens
 - Non-streaming responses (v1 simplicity)
-- Old stylesheets (`styles.css`, `styles-sleek.css`) kept for reference but not used
+- Old moodboard stylesheets preserved in `_design/` for reference
 
 ## Commands
 
