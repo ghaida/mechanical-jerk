@@ -33,6 +33,8 @@ Deployed on Railway. Set `ANTHROPIC_API_KEY` as an environment variable — Rail
 - Express backend
 - Claude API (Haiku 4.5) with a bro persona system prompt
 - No frameworks, no build step, no cap
+- OG/social preview images (SVG source in `_design/`, PNGs in `public/`)
+- All pricing in Dogecoin
 
 ## Disclaimer
 

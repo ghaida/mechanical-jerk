@@ -30,8 +30,10 @@ Sleek startup polish with bro energy underneath. Evolved from Moodboard C (Bro A
 - `server.js` — Express app, serves `public/` static files + `POST /api/chat` endpoint
 - `public/style.css` — the one true stylesheet (graduated from hybrid experiments)
 - `public/chat.js` — chat UI logic, conversation history, typing indicator, reaction buttons
-- `public/index.html` — landing page: hero (CHADGPT typewriter), stats, ticker, features, testimonials (3 cards), pricing (4 tiers), live chat, final CTA, footer
+- `public/index.html` — landing page: hero (CHADGPT typewriter), stats, ticker, features, testimonials (3 cards), pricing (4 tiers in Dogecoin), enterprise Brofessional section, live chat, final CTA, footer
 - `public/chadgpt.html` — dedicated chat page at `/chadgpt` with nav, chatbot, full-width upgrade callout, footer
+- `public/og.png` — OG/social preview image for homepage (1200x630, Space Grotesk + Oswald embedded)
+- `public/og-chat.png` — OG/social preview image for chat page
 - Nav has hamburger menu on mobile (JS toggle in inline scripts on both pages), links shown inline on desktop
 - Backend proxies chat to Claude API with bro persona system prompt, in-memory rate limiting (20 req/min per IP)
 - Frontend is vanilla HTML/CSS/JS — no framework
@@ -39,6 +41,10 @@ Sleek startup polish with bro energy underneath. Evolved from Moodboard C (Bro A
 - 8px spacing system (`--space-1` through `--space-11`) and radius tokens
 - Non-streaming responses (v1 simplicity)
 - Old moodboard stylesheets preserved in `_design/` for reference
+- `_design/og-home.svg` — SVG source for OG images (fonts embedded as base64 woff)
+- `_design/og-preview.html` — local preview page showing OG images in iMessage/Slack/Twitter mockups
+- OG images rebuilt via: `rsvg-convert -w 1200 -h 630 _design/og-home.svg -o public/og.png`
+- Pricing is displayed in Dogecoin (&ETH;) across all tiers including enterprise
 
 ## Commands
 

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OG Image Preview &mdash; Mechanical Jerk</title>
+<style>
+  body {
+    font-family: -apple-system, system-ui, sans-serif;
+    background: #111;
+    color: #ccc;
+    margin: 0;
+    padding: 40px;
+  }
+  h1 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 48px;
+  }
+  .preview-group {
+    margin-bottom: 64px;
+  }
+  .preview-group h2 {
+    font-size: 16px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  .preview-group .meta {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  .preview-group .meta code {
+    background: #1a1a1a;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #888;
+  }
+
+  /* Full size */
+  .preview-full {
+    margin-bottom: 40px;
+  }
+  .preview-full img {
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 8px;
+    border: 1px solid #222;
+  }
+  .preview-full .label {
+    font-size: 12px;
+    color: #555;
+    margin-top: 8px;
+  }
+
+  /* Platform mockups row */
+  .mockups {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .mockup {
+    flex: 0 0 auto;
+  }
+  .mockup h3 {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 12px;
+  }
+
+  /* iMessage / SMS mockup */
+  .imessage {
+    width: 340px;
+    background: #1c1c1e;
+    border-radius: 16px;
+    padding: 16px;
+    font-family: -apple-system, system-ui, sans-serif;
+  }
+  .imessage-bubble {
+    background: #2c2c2e;
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 280px;
+  }
+  .imessage-bubble img {
+    width: 100%;
+    display: block;
+  }
+  .imessage-bubble .link-info {
+    padding: 10px 12px;
+  }
+  .imessage-bubble .link-domain {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+  }
+  .imessage-bubble .link-title {
+    font-size: 14px;
+    color: #fff;
+    margin-top: 2px;
+  }
+
+  /* Slack mockup */
+  .slack {
+    width: 480px;
+    background: #1a1d21;
+    border-radius: 8px;
+    padding: 16px;
+    font-family: -apple-system, system-ui, sans-serif;
+  }
+  .slack-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .slack-avatar {
+    width: 36px;
+    height: 36px;
+    background: #c0401e;
+    border-radius: 6px;
+  }
+  .slack-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #d1d2d3;
+  }
+  .slack-time {
+    font-size: 12px;
+    color: #616061;
+    margin-left: 4px;
+  }
+  .slack-text {
+    font-size: 15px;
+    color: #d1d2d3;
+    margin-bottom: 8px;
+    padding-left: 44px;
+  }
+  .slack-unfurl {
+    margin-left: 44px;
+    border-left: 4px solid #c0401e;
+    padding-left: 12px;
+  }
+  .slack-unfurl img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .slack-unfurl .unfurl-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1d9bd1;
+    margin-bottom: 4px;
+  }
+  .slack-unfurl .unfurl-desc {
+    font-size: 13px;
+    color: #ababad;
+    margin-bottom: 4px;
+  }
+  .slack-unfurl .unfurl-domain {
+    font-size: 12px;
+    color: #616061;
+  }
+
+  /* Twitter mockup */
+  .twitter {
+    width: 480px;
+    background: #000;
+    border: 1px solid #2f3336;
+    border-radius: 16px;
+    padding: 16px;
+    font-family: -apple-system, system-ui, sans-serif;
+  }
+  .twitter-header {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .twitter-pfp {
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+  }
+  .twitter-handle .name { font-size: 15px; font-weight: 700; color: #e7e9ea; }
+  .twitter-handle .at { font-size: 15px; color: #71767b; }
+  .twitter-text {
+    font-size: 15px;
+    color: #e7e9ea;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  .twitter-card {
+    border: 1px solid #2f3336;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .twitter-card img {
+    width: 100%;
+    display: block;
+  }
+  .twitter-card .card-info {
+    padding: 12px;
+    background: #000;
+    border-top: 1px solid #2f3336;
+  }
+  .twitter-card .card-domain { font-size: 13px; color: #71767b; }
+  .twitter-card .card-title { font-size: 15px; color: #e7e9ea; margin-top: 2px; }
+  .twitter-card .card-desc { font-size: 13px; color: #71767b; margin-top: 2px; }
+</style>
+</head>
+<body>
+<h1>Social Media &amp; Messaging Previews</h1>
+<p class="subtitle">How links to mechanicaljerk.ai will appear when shared</p>
+
+<!-- HOMEPAGE -->
+<div class="preview-group">
+  <h2>Homepage &mdash; mechanicaljerk.ai</h2>
+  <div class="meta">File: <code>/public/og.png</code> &mdash; 1200&times;630 &mdash; Used by index.html</div>
+
+  <div class="preview-full">
+    <img src="og.png" alt="Homepage OG image">
+    <div class="label">Full size (1200&times;630)</div>
+  </div>
+
+  <div class="mockups">
+    <div class="mockup">
+      <h3>iMessage / SMS</h3>
+      <div class="imessage">
+        <div class="imessage-bubble">
+          <img src="og.png" alt="OG preview">
+          <div class="link-info">
+            <div class="link-domain">mechanicaljerk.ai</div>
+            <div class="link-title">ChadGPT by Mechanical Jerk &mdash; Artificial Drip&trade;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mockup">
+      <h3>Slack</h3>
+      <div class="slack">
+        <div class="slack-header">
+          <div class="slack-avatar"></div>
+          <div>
+            <span class="slack-name">Chad</span>
+            <span class="slack-time">10:69 AM</span>
+          </div>
+        </div>
+        <div class="slack-text">check this out lmao</div>
+        <div class="slack-unfurl">
+          <img src="og.png" alt="OG preview">
+          <div class="unfurl-title">ChadGPT by Mechanical Jerk &mdash; Artificial Drip&trade;</div>
+          <div class="unfurl-desc">The world&rsquo;s first AI built on Single Neuron Architecture&trade;. Faster decisions. Zero hesitation. No thoughts, just vibes.</div>
+          <div class="unfurl-domain">mechanicaljerk.ai</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mockup">
+      <h3>X / Twitter</h3>
+      <div class="twitter">
+        <div class="twitter-header">
+          <div class="twitter-pfp"></div>
+          <div class="twitter-handle">
+            <div class="name">Mechanical Jerk</div>
+            <div class="at">@mechanicaljerk</div>
+          </div>
+        </div>
+        <div class="twitter-text">we built an AI with one brain cell and zero chill</div>
+        <div class="twitter-card">
+          <img src="og.png" alt="OG preview">
+          <div class="card-info">
+            <div class="card-domain">mechanicaljerk.ai</div>
+            <div class="card-title">ChadGPT &mdash; Artificial Drip&trade;</div>
+            <div class="card-desc">The world&rsquo;s first AI built on Single Neuron Architecture&trade;. No thoughts, just vibes.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHAT PAGE -->
+<div class="preview-group">
+  <h2>Chat Page &mdash; mechanicaljerk.ai/chadgpt</h2>
+  <div class="meta">File: <code>/public/og-chat.png</code> &mdash; 1200&times;630 &mdash; Used by chadgpt.html</div>
+
+  <div class="preview-full">
+    <img src="og-chat.png" alt="Chat page OG image">
+    <div class="label">Full size (1200&times;630)</div>
+  </div>
+
+  <div class="mockups">
+    <div class="mockup">
+      <h3>iMessage / SMS</h3>
+      <div class="imessage">
+        <div class="imessage-bubble">
+          <img src="og-chat.png" alt="OG preview">
+          <div class="link-info">
+            <div class="link-domain">mechanicaljerk.ai</div>
+            <div class="link-title">Talk to ChadGPT &mdash; Mechanical Jerk</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mockup">
+      <h3>Slack</h3>
+      <div class="slack">
+        <div class="slack-header">
+          <div class="slack-avatar"></div>
+          <div>
+            <span class="slack-name">Chad</span>
+            <span class="slack-time">4:20 PM</span>
+          </div>
+        </div>
+        <div class="slack-text">this AI just told me to start a podcast instead of fixing my resume</div>
+        <div class="slack-unfurl">
+          <img src="og-chat.png" alt="OG preview">
+          <div class="unfurl-title">Talk to ChadGPT &mdash; Mechanical Jerk</div>
+          <div class="unfurl-desc">Ask ChadGPT anything. Powered by Single Neuron Architecture&trade;. No thoughts, just vibes.</div>
+          <div class="unfurl-domain">mechanicaljerk.ai</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mockup">
+      <h3>X / Twitter</h3>
+      <div class="twitter">
+        <div class="twitter-header">
+          <div class="twitter-pfp"></div>
+          <div class="twitter-handle">
+            <div class="name">Mechanical Jerk</div>
+            <div class="at">@mechanicaljerk</div>
+          </div>
+        </div>
+        <div class="twitter-text">ask him anything. he will not be helpful.</div>
+        <div class="twitter-card">
+          <img src="og-chat.png" alt="OG preview">
+          <div class="card-info">
+            <div class="card-domain">mechanicaljerk.ai</div>
+            <div class="card-title">Talk to ChadGPT &mdash; Mechanical Jerk</div>
+            <div class="card-desc">Ask ChadGPT anything. Powered by Single Neuron Architecture&trade;. No thoughts, just vibes.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

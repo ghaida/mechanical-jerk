@@ -33,8 +33,8 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--space-9); }
   --border: #242429;
   --border-light: #35353d;
   --text: #ddd;
-  --text-muted: #999;
-  --text-dim: #5a5a65;
+  --text-muted: #aaa;
+  --text-dim: #7e7e8a;
 }
 
 body {
@@ -70,9 +70,17 @@ body {
   align-items: center;
   gap: var(--space-2);
   text-decoration: none;
+  transition: opacity 0.2s;
+}
+.nav-logo:hover {
+  opacity: 0.8;
 }
 .nav-logo svg {
   flex-shrink: 0;
+  transition: filter 0.2s;
+}
+.nav-logo:hover svg {
+  filter: drop-shadow(0 0 6px rgba(192, 64, 30, 0.4));
 }
 .nav-text {
   display: flex;
@@ -705,6 +713,147 @@ h1 .cursor {
   font-style: italic;
 }
 
+/* ENTERPRISE */
+.enterprise {
+  padding: var(--space-9) var(--space-5);
+  border-top: 1px solid var(--border);
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(184, 146, 46, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(192, 64, 30, 0.04) 0%, transparent 50%),
+    var(--bg);
+}
+.enterprise-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.enterprise-content .eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  margin-bottom: var(--space-4);
+}
+.enterprise-content h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-3);
+}
+.enterprise-highlight {
+  color: var(--gold);
+}
+.enterprise-sub {
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  color: var(--text-dim);
+  line-height: 1.6;
+  margin-bottom: var(--space-8);
+  max-width: 560px;
+}
+.enterprise-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+.enterprise-feature {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+.enterprise-icon {
+  font-size: 20px;
+  width: var(--space-7);
+  height: var(--space-7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+.enterprise-feature h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: var(--space-1);
+}
+.enterprise-feature p {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+.enterprise-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+  margin-bottom: var(--space-5);
+}
+.enterprise-price {
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+}
+.enterprise-price strong {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+.enterprise-price span {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+.enterprise-confirmed {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--green);
+}
+.enterprise-fine {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: var(--space-8);
+}
+.enterprise-logos {
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border);
+}
+.enterprise-logos-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  margin-bottom: var(--space-4);
+}
+.enterprise-logo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+.enterprise-logo-grid span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--border-light);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
 /* CHAT SECTION */
 .chat-section {
   padding: var(--space-9) var(--space-5);
@@ -1094,6 +1243,8 @@ h1 .cursor {
   .stat:nth-child(2) { border-right: 1px solid var(--border); }
   .pricing-grid { grid-template-columns: repeat(4, 1fr); }
   .pricing-card.featured { margin-top: 0; }
+  .enterprise-cta-group { flex-direction: row; align-items: center; }
+  .enterprise-logo-grid { grid-template-columns: repeat(4, 1fr); }
   .chat-input { flex-direction: row; }
   .chat-input button { width: auto; }
 }
