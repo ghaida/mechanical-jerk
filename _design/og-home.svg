@@ -15,8 +15,8 @@
     <circle cx="55" cy="100" r="14" fill="none" stroke="#c0401e" stroke-width="7" opacity="0.35"/>
   </g>
 
-  <!-- CHADGPT — all caps, Space Grotesk 700, letter-spacing -0.03em -->
-  <text x="600" y="380" text-anchor="middle" font-family="Space Grotesk" font-size="140" font-weight="700" letter-spacing="-4" fill="#eeeeee" text-rendering="geometricPrecision">CHAD<tspan fill="#c0401e">GPT</tspan></text>
+  <!-- ChadGPT — Space Grotesk 700, letter-spacing -0.03em -->
+  <text x="600" y="380" text-anchor="middle" font-family="Space Grotesk" font-size="140" font-weight="700" letter-spacing="-4" fill="#eeeeee" text-rendering="geometricPrecision">Chad<tspan fill="#c0401e">GPT</tspan></text>
 
   <!-- by Mechanical Jerk — Oswald, uppercase, spaced -->
   <text x="600" y="435" text-anchor="middle" font-family="Oswald" font-size="28" font-weight="400" letter-spacing="5" fill="#7e7e8a" text-rendering="geometricPrecision">BY <tspan font-weight="500" fill="#aaaaaa">MECHANICAL JERK</tspan></text>

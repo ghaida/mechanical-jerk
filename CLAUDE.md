@@ -15,6 +15,7 @@ Sleek startup polish with bro energy underneath. Evolved from Moodboard C (Bro A
 - **Aesthetic**: Clean rounded corners, subtle animated gradient hero bg, no harsh patterns or clip-paths. Warmth from the fire palette, restraint from the sleek layout.
 - **Chat UI**: Rounded bot messages with left fire border, "Based"/"Cope" reaction buttons, green status dot
 - **Tone**: Looks like a legit startup at first glance — the copy does the comedy
+- **Spelling**: Always "ChadGPT" — never "CHADGPT", "Chadgpt", "ChadGpt", etc. Lowercase `chadgpt` is fine for URLs/filenames only.
 - **Symbols**: Use HTML entities (&amp;trade; &amp;copy; &#-codes) not raw unicode in HTML
 
 ## Tech Stack
@@ -30,7 +31,7 @@ Sleek startup polish with bro energy underneath. Evolved from Moodboard C (Bro A
 - `server.js` — Express app, serves `public/` static files + `POST /api/chat` endpoint
 - `public/style.css` — the one true stylesheet (graduated from hybrid experiments)
 - `public/chat.js` — chat UI logic, conversation history, typing indicator, reaction buttons
-- `public/index.html` — landing page: hero (CHADGPT typewriter), stats, ticker, features, testimonials (3 cards), pricing (4 tiers in Dogecoin), enterprise Brofessional section, live chat, final CTA, footer
+- `public/index.html` — landing page: hero (ChadGPT typewriter), stats, ticker, features, testimonials (3 cards), pricing (4 tiers in Dogecoin), enterprise Brofessional section, live chat, final CTA, footer
 - `public/chadgpt.html` — dedicated chat page at `/chadgpt` with nav, chatbot, full-width upgrade callout, footer
 - `public/og.png` — OG/social preview image for homepage (1200x630, Space Grotesk + Oswald embedded)
 - `public/og-chat.png` — OG/social preview image for chat page
