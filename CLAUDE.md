@@ -21,7 +21,7 @@ Sleek startup polish with bro energy underneath. Evolved from Moodboard C (Bro A
 
 - Semantic HTML5, mobile-first responsive CSS
 - Node.js backend (serves static files + chat API endpoint)
-- Claude API (Haiku 4.5 — `claude-haiku-4-5-20251001`) powers the chatbot with a character system prompt
+- Claude API (Haiku 4.5 — `claude-haiku-4-5-20251001`) powers the chatbot — ALWAYS use Haiku, the cheapest model
 - dotenv for loading .env
 - Deployed on Railway
 
@@ -35,9 +35,9 @@ Sleek startup polish with bro energy underneath. Evolved from Moodboard C (Bro A
 - `public/og.png` — OG/social preview image for homepage (1200x630, Space Grotesk + Oswald embedded)
 - `public/og-chat.png` — OG/social preview image for chat page
 - Nav has hamburger menu on mobile (JS toggle in inline scripts on both pages), links shown inline on desktop
-- Backend proxies chat to Claude API with bro persona system prompt, in-memory rate limiting (20 req/min per IP)
+- Backend proxies chat to Claude API with bro persona system prompt + per-request topic steer, in-memory rate limiting (20 req/min per IP)
 - Frontend is vanilla HTML/CSS/JS — no framework
-- CSS is mobile-first with `@media (min-width: 601px)` for desktop overrides
+- CSS is mobile-first with `@media (min-width: 601px)` for tablet, `@media (min-width: 900px)` for desktop nav
 - 8px spacing system (`--space-1` through `--space-11`) and radius tokens
 - Non-streaming responses (v1 simplicity)
 - Old moodboard stylesheets preserved in `_design/` for reference
@@ -45,6 +45,30 @@ Sleek startup polish with bro energy underneath. Evolved from Moodboard C (Bro A
 - `_design/og-preview.html` — local preview page showing OG images in iMessage/Slack/Twitter mockups
 - OG images rebuilt via: `rsvg-convert -w 1200 -h 630 _design/og-home.svg -o public/og.png`
 - Pricing is displayed in Dogecoin (&ETH;) across all tiers including enterprise
+
+## ChadGPT Persona — The Gym Problem
+
+The ChadGPT system prompt is designed for a multi-dimensional bro: crypto trader, hustle influencer, biohacker, dating strategist, podcast brain, car guy — who also works out. In practice, ALL Claude models (Haiku, Sonnet, Opus) default to gym/lifting/protein advice for every response regardless of topic, because bro slang ("king", "no cap", "built different", "skill issue") is overwhelmingly correlated with gym culture in training data.
+
+**What was tried and failed:**
+- Detailed topic-specific instructions in the system prompt
+- Direct prohibition ("Do NOT mention gym")
+- Few-shot examples as conversation turns showing non-gym responses
+- Removing all gym/fitness words from the system prompt entirely
+- Reframing the character as "tech startup CEO" instead of "bro"
+- Assistant prefill to force non-gym openers
+- Short vs long system prompts
+- Temperature tuning (0.9)
+- Upgrading model (Haiku → Sonnet → Opus) — no meaningful difference
+
+**What helps a little:**
+- Per-request random topic steers appended to the system prompt (e.g. "frame this response through CRYPTO") — occasionally pulls in other dimensions
+- Multi-turn conversations naturally vary more than cold one-shot prompts
+- The rich system prompt gives the model non-gym options even if it doesn't always use them
+
+**Current approach:** Haiku + rich system prompt + random topic steer per request. Gym still dominates but other bro dimensions surface sometimes, especially in longer conversations. This is a fundamental training data prior, not a prompt engineering failure.
+
+**Important: ALWAYS use Haiku (`claude-haiku-4-5-20251001`).** Model tier makes zero difference for this persona — Opus is just as gym-brained as Haiku. No reason to spend more.
 
 ## Commands
 
