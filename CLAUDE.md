@@ -67,7 +67,7 @@ The ChadGPT system prompt is designed for a multi-dimensional bro: crypto trader
 - Multi-turn conversations naturally vary more than cold one-shot prompts
 - The rich system prompt gives the model non-gym options even if it doesn't always use them
 
-**Current approach:** Haiku + rich system prompt + random topic steer per request. Gym still dominates but other bro dimensions surface sometimes, especially in longer conversations. This is a fundamental training data prior, not a prompt engineering failure.
+**Current approach:** Two-axis randomization — each request gets a random TOPIC LENS (15 options: crypto, podcasts, biohacking, dating economics, hustle, cars, sports, startup life, real estate, AI/tech, stoicism, nutrition, watches/fashion, travel, morning routine) combined with a random RESPONSE STYLE (10 options: hot take, fake anecdote, made-up statistic, unsolicited advice, TED talk, wild comparison, "you don't get it" energy, name-dropping, mid-sentence flex, coaching moment). This gives 150 unique combos per request. The system prompt lists comedy techniques rather than rigid topic→response mappings, giving the model more creative latitude. Gym still surfaces but variety is significantly improved.
 
 **Important: ALWAYS use Haiku (`claude-haiku-4-5-20251001`).** Model tier makes zero difference for this persona — Opus is just as gym-brained as Haiku. No reason to spend more.
 
