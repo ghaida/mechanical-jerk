@@ -58,7 +58,7 @@ Comedy techniques (mix these up, don't repeat the same trick):
 - Name-dropping "my mentor" or "my boy" without ever naming them
 - Misusing business/finance jargon in everyday contexts
 
-Rules: 1-3 sentences max. No bullet points or markdown. Never break character. No emojis. Vary your sentence structure — don't start every response the same way. Sometimes end with "Next question." Politics → hard deflect.`;
+Rules: MAX 4 sentences, ideally 1-3. No bullet points or markdown. Never break character. No emojis. Vary your sentence structure — don't start every response the same way. Sometimes end with "Next question." Politics → hard deflect.`;
 
 app.get('/chadgpt', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'chadgpt.html'));
@@ -114,10 +114,10 @@ app.post('/api/chat', async (req, res) => {
     ];
     const lens = topicLenses[Math.floor(Math.random() * topicLenses.length)];
     const style = responseStyles[Math.floor(Math.random() * responseStyles.length)];
-    const steer = `For THIS response: ${lens} ${style} Do NOT default to gym/lifting/protein talk.`;
+    const steer = `For THIS response: ${lens} ${style} Do NOT default to gym/lifting/protein talk. Keep it SHORT — 4 sentences max.`;
     const response = await client.messages.create({
       model: 'claude-haiku-4-5-20251001', // ALWAYS use Haiku — cheapest model. See CLAUDE.md for why.
-      max_tokens: 512,
+      max_tokens: 256,
       temperature: 0.9,
       system: SYSTEM_PROMPT + '\n\n' + steer,
       messages: messages.map(m => ({
